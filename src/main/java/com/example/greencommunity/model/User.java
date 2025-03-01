@@ -39,9 +39,6 @@ public class User {
 
     private String location;
 
-    @Column(columnDefinition = "jsonb")
-    private String preferences = "{}";
-
     @Column(name = "created_at", nullable = false)
     private Instant createdAt = Instant.now();
 
