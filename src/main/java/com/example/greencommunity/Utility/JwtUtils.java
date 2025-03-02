@@ -1,6 +1,6 @@
 package com.example.greencommunity.Utility;
 
-import com.example.greencommunity.service.Implement.UserDetailsImpl;
+import com.example.greencommunity.service.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public class JwtUtils {
     public String generateJwtToken(Authentication authentication) {
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
-        Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
+        Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
 
         return Jwts.builder()
                 .setSubject((userPrincipal.getUsername()))

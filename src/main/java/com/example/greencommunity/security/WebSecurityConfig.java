@@ -2,7 +2,7 @@ package com.example.greencommunity.security;
 
 import com.example.greencommunity.Authentication.AuthEntryPointJwt;
 import com.example.greencommunity.Authentication.AuthTokenFilter;
-import com.example.greencommunity.service.Implement.UserDetailsServiceImpl;
+import com.example.greencommunity.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

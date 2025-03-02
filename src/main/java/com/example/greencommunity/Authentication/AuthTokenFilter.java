@@ -1,7 +1,7 @@
 package com.example.greencommunity.Authentication;
 
 import com.example.greencommunity.Utility.JwtUtils;
-import com.example.greencommunity.service.Implement.UserDetailsServiceImpl;
+import com.example.greencommunity.service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

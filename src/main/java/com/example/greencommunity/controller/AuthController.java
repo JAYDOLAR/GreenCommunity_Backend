@@ -8,7 +8,7 @@ import com.example.greencommunity.dto.MessageResponse;
 import com.example.greencommunity.dto.SignupRequest;
 import com.example.greencommunity.model.User;
 import com.example.greencommunity.repository.UserRepository;
-import com.example.greencommunity.service.Implement.UserDetailsImpl;
+import com.example.greencommunity.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
