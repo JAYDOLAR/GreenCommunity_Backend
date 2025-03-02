@@ -47,7 +47,6 @@ public class CarbonFootprintRecordServiceImpl implements CarbonFootprintRecordSe
         CarbonFootprintRecord record = recordRepository.findById(recordId)
             .orElseThrow(() -> new RuntimeException("Record not found"));
 
-        // Only allow update if the record belongs to the current user
         if (!record.getUser().getId().equals(userId)) {
             throw new RuntimeException("Unauthorized: You do not own this record");
         }
@@ -55,7 +54,6 @@ public class CarbonFootprintRecordServiceImpl implements CarbonFootprintRecordSe
         record.setRecordDate(request.getRecordDate());
         record.setCarbonScore(request.getCarbonScore());
         record.setDetails(request.getDetails());
-        // Note: If needed, an updatedAt field can be added for tracking updates
 
         CarbonFootprintRecord updatedRecord = recordRepository.save(record);
         return convertToResponse(updatedRecord);
